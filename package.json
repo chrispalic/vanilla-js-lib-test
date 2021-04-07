@@ -1,0 +1,19 @@
+{
+  "name": "vanilla-js-lib-test",
+  "version": "1.0.0",
+  "description": "Testing a webpack built vanilla lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrispalic/vanilla-js-lib-test.git"
+  },
+  "author": "Chris Palic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrispalic/vanilla-js-lib-test/issues"
+  },
+  "homepage": "https://github.com/chrispalic/vanilla-js-lib-test#readme"
+}
