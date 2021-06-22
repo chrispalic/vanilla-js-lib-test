@@ -1,3 +1,5 @@
+import * as Shared from './shared/shared';
+
 export function testFunc(message: string): void {
-    console.log(message);
+    Shared.sharedLogger(message);
 }
