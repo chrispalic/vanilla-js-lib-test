@@ -9,7 +9,7 @@ export default [
 	{
 		input: 'src/main.ts',
 		output: {
-			name: 'howLongUntilLunch',
+			name: 'ifs-core-rules-engine',
 			file: pkg.browser,
 			format: 'umd'
 		},
@@ -28,7 +28,7 @@ export default [
 	// `file` and `format` for each target)
 	{
 		input: 'src/main.ts',
-		external: ['ms'],
+		external: [],
 		plugins: [
 			typescript() // so Rollup can convert TypeScript to JavaScript
 		],

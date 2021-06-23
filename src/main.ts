@@ -1,5 +1,3 @@
-import * as Shared from './shared/shared';
+// This file exposes out all of our library code.
 
-export function testFunc(message: string): void {
-    Shared.sharedLogger(message);
-}
+export * from './shared/shared';
