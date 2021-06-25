@@ -6,5 +6,5 @@ describe('First Test', () => {
   });
   it('Should return falsy', () => {
     expect(Shared.returnsTrue()).toBeFalsy();
-  })
+  });
 });
