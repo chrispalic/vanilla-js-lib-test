@@ -1,6 +1,6 @@
 {
   "name": "chrisp-vanilla-js-lib-test",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Testing a rollup built vanilla lib",
   "main": "dist/chrisp-vanilla-js-lib-test.cjs.js",
   "module": "dist/chrisp-vanilla-js-lib-test.esm.js",
