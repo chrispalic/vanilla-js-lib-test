@@ -1,14 +1,16 @@
 {
-  "name": "vanilla-js-lib-test",
-  "version": "1.0.0",
-  "description": "Testing a webpack built vanilla lib",
-  "main": "dist/ifs-base-rules-engine.cjs.js",
-  "module": "dist/ifs-base-rules-engine.esm.js",
-  "browser": "dist/ifs-base-rules-engine.umd.js",
+  "name": "chrisp-vanilla-js-lib-test",
+  "version": "0.0.1",
+  "description": "Testing a rollup built vanilla lib",
+  "main": "dist/chrisp-vanilla-js-lib-test.cjs.js",
+  "module": "dist/chrisp-vanilla-js-lib-test.esm.js",
+  "browser": "dist/chrisp-vanilla-js-lib-test.umd.js",
   "scripts": {
     "test": "test",
-    "build-lib": "rollup --config",
+    "build-lib": "rimraf ./dist && rollup --config",
     "lint-lib": "eslint --ext .ts .",
+    "publish-lib": "npm publish",
+    "publish-patch": "npm version patch && publish-lib",
     "test-lib": "karma start karma.conf.js"
   },
   "repository": {
@@ -36,9 +38,13 @@
     "karma-jasmine": "^4.0.1",
     "karma-jasmine-html-reporter": "^1.6.0",
     "karma-rollup-preprocessor": "^7.0.7",
+    "rimraf": "^3.0.2",
     "rollup": "^2.44.0",
     "ts-node": "^9.1.1",
     "tslib": "^2.2.0",
     "typescript": "^4.2.4"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

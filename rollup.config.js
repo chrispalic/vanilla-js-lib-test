@@ -4,15 +4,27 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import pkg from './package.json';
 
+const makeExternalPackage = externalArr => {
+  if (externalArr.length === 0) {
+    return () => false
+  }
+  const pattern = new RegExp(`^(${externalArr.join('|')})($|/)`)
+  return id => pattern.test(id)
+}
+
 export default [
 	// browser-friendly UMD build
 	{
 		input: 'src/main.ts',
 		output: {
-			name: 'ifs-core-rules-engine',
+			name: 'vanilla-js-test',
 			file: pkg.browser,
 			format: 'umd'
 		},
+		external: makeExternalPackage([
+      ...Object.keys(pkg.dependencies || {}),
+      ...Object.keys(pkg.peerDependencies || {})
+    ]),
 		plugins: [
 			resolve(),   // so Rollup can find `ms`
 			commonjs(),  // so Rollup can convert `ms` to an ES module
@@ -28,7 +40,10 @@ export default [
 	// `file` and `format` for each target)
 	{
 		input: 'src/main.ts',
-		external: [],
+		external: makeExternalPackage([
+      ...Object.keys(pkg.dependencies || {}),
+      ...Object.keys(pkg.peerDependencies || {})
+    ]),
 		plugins: [
 			typescript() // so Rollup can convert TypeScript to JavaScript
 		],
