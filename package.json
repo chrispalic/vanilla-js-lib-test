@@ -1,10 +1,23 @@
 {
-  "name": "vanilla-js-lib-test",
-  "version": "1.0.0",
-  "description": "Testing a webpack built vanilla lib",
-  "main": "index.js",
+  "name": "chrisp-vanilla-js-lib-test",
+  "version": "0.0.4",
+  "description": "Testing a rollup built vanilla lib",
+  "main": "dist/chrisp-vanilla-js-lib-test.cjs.js",
+  "module": "dist/chrisp-vanilla-js-lib-test.esm.js",
+  "browser": "dist/chrisp-vanilla-js-lib-test.umd.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build-lib": "rimraf ./dist && rollup --config",
+    "lint-lib": "eslint --ext .ts .",
+    "publish-final": "git push && git push --tags",
+    "publish-lib": "npm publish",
+    "publish-patch": "npm version patch -m \"Version Bump to %s\" && npm run publish-lib",
+    "postpublish-patch": "npm run publish-final",
+    "publish-minor": "npm version minor -m \"Version Bump to %s\" && npm run publish-lib",
+    "postpublish-minor": "npm run publish-final",
+    "publish-major": "npm version major -m \"Version Bump to %s\" && npm run publish-lib",
+    "postpublish-major": "npm run publish-final",
+    "test-lib": "karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +28,29 @@
   "bugs": {
     "url": "https://github.com/chrispalic/vanilla-js-lib-test/issues"
   },
-  "homepage": "https://github.com/chrispalic/vanilla-js-lib-test#readme"
+  "homepage": "https://github.com/chrispalic/vanilla-js-lib-test#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@types/jasmine": "^3.7.7",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "eslint": "^7.29.0",
+    "eslint-config-google": "^0.14.0",
+    "jasmine-core": "^3.7.1",
+    "karma": "^6.3.4",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^4.0.1",
+    "karma-jasmine-html-reporter": "^1.6.0",
+    "karma-rollup-preprocessor": "^7.0.7",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.44.0",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
+  "files": [
+    "dist"
+  ]
 }
