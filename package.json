@@ -9,8 +9,14 @@
     "test": "test",
     "build-lib": "rimraf ./dist && rollup --config",
     "lint-lib": "eslint --ext .ts .",
+    "publish-final": "git push && git push --tags",
     "publish-lib": "npm publish",
     "publish-patch": "npm version patch -m \"Version Bump to %s\" && npm run publish-lib",
+    "postpublish-patch": "npm run publish-final",
+    "publish-minor": "npm version minor -m \"Version Bump to %s\" && npm run publish-lib",
+    "postpublish-minor": "npm run publish-final",
+    "publish-major": "npm version major -m \"Version Bump to %s\" && npm run publish-lib",
+    "postpublish-major": "npm run publish-final",
     "test-lib": "karma start karma.conf.js"
   },
   "repository": {
