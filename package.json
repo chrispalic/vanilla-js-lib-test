@@ -1,6 +1,6 @@
 {
   "name": "chrisp-vanilla-js-lib-test",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Testing a rollup built vanilla lib",
   "main": "dist/chrisp-vanilla-js-lib-test.cjs.js",
   "module": "dist/chrisp-vanilla-js-lib-test.esm.js",
@@ -10,7 +10,7 @@
     "build-lib": "rimraf ./dist && rollup --config",
     "lint-lib": "eslint --ext .ts .",
     "publish-lib": "npm publish",
-    "publish-patch": "npm version patch && npm run publish-lib",
+    "publish-patch": "npm version patch -m 'Version Bump to %s' && npm run publish-lib",
     "test-lib": "karma start karma.conf.js"
   },
   "repository": {
