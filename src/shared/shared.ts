@@ -15,7 +15,7 @@ export function sharedLogger(stringToLog: string): void {
  * @return {*}
  */
 export function notUsedYet(): boolean {
-  return false;
+  return justReturnsFalse();
 }
 
 /**
@@ -26,4 +26,13 @@ export function notUsedYet(): boolean {
  */
 export function returnsTrue(): boolean {
   return true;
+}
+
+/**
+ *
+ *
+ * @return {*}  {boolean}
+ */
+function justReturnsFalse(): boolean {
+  return false;
 }
