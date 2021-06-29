@@ -10,7 +10,7 @@
     "build-lib": "rimraf ./dist && rollup --config",
     "lint-lib": "eslint --ext .ts .",
     "publish-lib": "npm publish",
-    "publish-patch": "npm version patch && publish-lib",
+    "publish-patch": "npm version patch && npm run publish-lib",
     "test-lib": "karma start karma.conf.js"
   },
   "repository": {
