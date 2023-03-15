@@ -1,5 +1,5 @@
 {
-  "name": "chrisp-vanilla-js-lib-test",
+  "name": "chrisp-vanilla-js-lib-test-1",
   "version": "0.0.4",
   "description": "Testing a rollup built vanilla lib",
   "main": "dist/chrisp-vanilla-js-lib-test.cjs.js",
