@@ -12,3 +12,5 @@ Testing building a lib with webpack, Typescript, etc.
 * `npm run publish-patch` Will automatically increment the patch number, push to npm, and commit and tag github repo
 * `npm run publish-minor` Will automatically increment the patch number, push to npm, and commit and tag github repo
 * `npm run publish-major` Will automatically increment the patch number, push to npm, and commit and tag github repo
+
+New line
